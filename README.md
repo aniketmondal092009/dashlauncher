@@ -16,8 +16,16 @@ utilities** for it to be installed
   - `xorg` tools for running this thing (if you are using X11 desktop 
   environments then you're just fine, no need to install)
   - `xwayland` if you are using **wayland** protocol
+  - `bash` for some ease.
+
+>[!WARNING]
+> This is not supported on Windows or MacOS
 
 ### Installation Process
+
+`dashlauncher`, like other [suckless softwares](https://tools.suckless.org), 
+follows KISS Principle. You are free to clone the repo, use it and modify it as
+you like it. Thus, the installation process is listed below.
 
 ```bash
 git clone --depth=1 https://github.com/aniketmondal092009/dashlauncher.git
@@ -27,3 +35,5 @@ sudo make install
 
 The installation process is very simple, Just **copy and run** the above code.
 (Or you could simply run the above thing as a **shell script**)
+
+
