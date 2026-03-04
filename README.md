@@ -6,7 +6,7 @@ theme of [tofi](https://github.com/philj56/tofi), based on X11.
 
 ## Installation
 
-```
+```bash
 git clone --depth=1 https://github.com/aniketmondal092009/dashlauncher.git
 cd dashlauncher/
 sudo make install
