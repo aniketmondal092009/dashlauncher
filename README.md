@@ -1,4 +1,4 @@
-**dashlauncher** (currently in beta)
+**dashlauncher** (under construction)
 
 A simple launcher inspired from the blazingly fast speed of 
 [dmenu](https://tools.suckless.org/dmenu/) and the full-screen 
