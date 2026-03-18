@@ -1,3 +1,4 @@
+
 #include <X11/Xlib.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,20 +7,8 @@
 static Display *display;
 static Window window;
 static int screen;
+
 static XEvent event;
-
-void git_add(char *filename) {
-    printf("Adding file: %s\n", filename);
-}
-
-int help (int argc, char *argv[]) {
-    if (argc == 3 && strcmp(argv[1], "add") == 0) {
-        git_add(argv[2]);
-    } else {
-        printhello();
-    }
-    return 0;
-}
 
 void printhello() {
     printf("Dash launcher\n");
@@ -30,6 +19,8 @@ void printhello() {
 }
 
 
+static void drawmenu() {
+}
 
 static void setup() {
     display = XOpenDisplay(NULL);
@@ -58,6 +49,8 @@ static void setup() {
             XDrawString(display, window, DefaultGC(display, screen), 50, 50, "Hello X11", 9);
         }
     }
+
+    drawmenu();
 }
 
 static void cleanup() {
@@ -66,8 +59,6 @@ static void cleanup() {
 }
 
 int main() {
-    // printhello();
-    
     setup();
     cleanup();
 
