@@ -1,6 +1,6 @@
 
-dash: main.c
-	gcc -o dash main.c
+dash: main.cpp
+	g++ -o dash main.cpp
 
 clean:
-	rm hello
+	rm dash
