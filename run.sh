@@ -1,4 +1,20 @@
 #!/usr/bin/env bash
 
+set -e
 
-echo hello world
+FILE="dash"
+
+if [ ! -f "$FILE" ]; then
+    make
+
+    echo ""
+fi
+
+./dash
+
+echo ""
+
+rm dash
+
+
+

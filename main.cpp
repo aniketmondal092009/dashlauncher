@@ -1,16 +1,13 @@
 
-#include <stdio.h>
-#include "string.h"
+#include "include/string.hpp"
+#include "include/utilities.hpp"
 
 
-void help() {
-    println("hello");
-}
 
-
-int main() {
-    help();
+int main(int argc, char** argv) {
+    getadditional(argc, argv);
 
     return 0;
 }
+
 
