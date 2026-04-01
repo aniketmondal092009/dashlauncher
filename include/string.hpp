@@ -2,14 +2,13 @@
 #define STRING_HPP
 
 #include <cstddef>
-#include <iostream>
 #include <cstdio>
+#include <iostream>
 
 struct String {
     const char *data;
     size_t count;
 };
-
 
 inline size_t length(const char *string) {
     size_t len = 0;
@@ -20,16 +19,12 @@ inline size_t length(const char *string) {
     return len;
 }
 
-inline void println(String string) {
-    std::cout << string.data << std::endl;
-}
+inline void println(String string) { std::cout << string.data << std::endl; }
 
-inline void println(const char *s) {
-    std::cout << s << std::endl;
-}
+inline void println(const char *s) { std::cout << s << std::endl; }
 
 inline String newstring(const char *string) {
-    return String{ string, length(string) };
+    return String{string, length(string)};
 }
 
 #endif

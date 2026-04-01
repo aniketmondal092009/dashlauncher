@@ -2,8 +2,9 @@
 #ifndef UTILITIES_HPP
 #define UTILITIES_HPP
 
-#include "string.hpp"
 #include <string>
+
+#include "string.hpp"
 
 static void printhelp() {
     println("this is help text");
@@ -21,5 +22,3 @@ static void getadditional(int argc, char* argv[]) {
 }
 
 #endif
-
-
