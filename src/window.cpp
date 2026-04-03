@@ -1,4 +1,5 @@
 #include "window.hpp"
+
 #include <iostream>
 #include <X11/Xutil.h>
 
@@ -20,13 +21,24 @@ bool XWindow::init(int width, int height) {
     }
 
     screen = DefaultScreen(display);
+    int screen_width = DisplayWidth(display, screen);
+    int screen_height = DisplayHeight(display, screen);
 
-    // Create window
-    window = XCreateSimpleWindow(display, RootWindow(display, screen), 10, 10, width, height, 1,
-                                 BlackPixel(display, screen), WhitePixel(display, screen));
+    // Center window
+    int x = (screen_width - width) / 2;
+    int y = (screen_height - height) / 2;
 
-    // Select kind of events we are interested in
-    XSelectInput(display, window, ExposureMask | KeyPressMask);
+    // Set window attributes (override_redirect for launcher)
+    XSetWindowAttributes attrs;
+    attrs.override_redirect = True;
+    attrs.background_pixel = BlackPixel(display, screen);
+    attrs.event_mask = ExposureMask | KeyPressMask;
+
+    window = XCreateWindow(display, RootWindow(display, screen),
+                          x, y, width, height, 0,
+                          DefaultDepth(display, screen), InputOutput,
+                          DefaultVisual(display, screen),
+                          CWOverrideRedirect | CWBackPixel | CWEventMask, &attrs);
 
     // Map (show) the window
     XMapWindow(display, window);

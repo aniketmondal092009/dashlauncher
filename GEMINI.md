@@ -14,6 +14,7 @@ This file provides context and guidelines for developing the `dashlauncher` proj
 - `src/`: Source files (`.cpp`).
 - `Makefile`: Build configuration.
 - `README.md`: Project vision and user-facing documentation.
+- `compile_flags.txt`: Used for LSP (like `clangd`) support to find header files.
 
 ---
 
@@ -32,6 +33,10 @@ The project uses a standard `Makefile` for compilation and installation.
 ---
 
 ## Development Conventions
+
+### Windowing Behavior
+- **Centering:** The launcher automatically calculates screen dimensions and centers its window.
+- **Override Redirect:** The window bypasses the window manager (`override_redirect = True`), which is standard for launcher applications to ensure it is always on top.
 
 ### Coding Style
 - **Namespacing:** All core logic should reside within the `launcher` namespace to avoid naming collisions.
