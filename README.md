@@ -1,39 +1,41 @@
-**dashlauncher** (under construction)
+# dashlauncher (`dash`)
 
-A simple launcher inspired from the blazingly fast speed of 
-[dmenu](https://tools.suckless.org/dmenu/) and the full-screen 
-theme of [tofi](https://github.com/philj56/tofi), based on X11.
+`dashlauncher` is a lightweight, X11-based application launcher inspired by tools like `dmenu` and `tofi`. It follows the "suckless" philosophy of simplicity and speed, implemented in C++ for a clean, modular codebase.
+
+## Features
+- **Minimalist Design:** Focuses on speed and zero bloat.
+- **Auto-Centering:** Automatically calculates screen dimensions to center the launcher window.
+- **Always on Top:** Uses `override_redirect` to bypass window managers, ensuring it's always accessible.
+- **Modular C++:** Designed for easy extension and maintenance.
+
+## Requirements
+- `g++` or `clang++` (supporting C++17)
+- `X11` development libraries (`libx11-dev` on Debian/Ubuntu)
+- `make`
 
 ## Installation
 
-### Requirements
-
-`dashlauncher` is just like any other simple project, so it requires few **basic
-utilities** for it to be installed
-  - `nvim` or `nano` or any of your favourite **text editor**
-  - `gcc` **compiler tools** in your path
-  - `git` for **cloning** this repo
-  - `xorg` tools for running this thing (if you are using X11 desktop 
-  environments then you're just fine, no need to install)
-  - `xwayland` if you are using **wayland** protocol
-  - `bash` for some ease.
-
->[!WARNING]
-> This is not supported on Windows or MacOS
-
-### Installation Process
-
-`dashlauncher`, like other [suckless softwares](https://tools.suckless.org), 
-follows KISS Principle. You are free to clone the repo, use it and modify it as
-you like it. Thus, the installation process is listed below.
-
+### Build
+To compile the `dash` binary:
 ```bash
-git clone --depth=1 https://github.com/aniketmondal092009/dashlauncher.git
-cd dashlauncher/
+make
+```
+
+### Install
+To install the binary to `/usr/local/bin`:
+```bash
 sudo make install
 ```
 
-The installation process is very simple, Just **copy and run** the above code.
-(Or you could simply run the above thing as a **shell script**)
+## Usage
+Simply run the binary:
+```bash
+dash
+```
 
+### Options
+- `-h`, `--help`: Show usage information.
+- `-v`, `--version`: Show version information.
 
+## License
+MIT

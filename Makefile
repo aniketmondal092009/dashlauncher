@@ -17,7 +17,7 @@ $(TARGET): $(OBJS)
 clean:
 	rm -f $(OBJS) $(TARGET) a.out
 
-install: $(TARGET)
-	install -D -m 755 $(TARGET) /usr/local/bin/$(TARGET)
+# install: $(TARGET)
+# 	install -D -m 755 $(TARGET) /usr/local/bin/$(TARGET)
 
 .PHONY: all clean install
