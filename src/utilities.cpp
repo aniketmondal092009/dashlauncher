@@ -1,8 +1,5 @@
-#include "args.hpp"
 #include <iostream>
 #include <string>
-
-namespace launcher {
 
 bool get_args(int argc, char* argv[]) {
     if (argc == 1) {
@@ -41,4 +38,3 @@ bool get_args(int argc, char* argv[]) {
     return true;
 }
 
-} // namespace launcher

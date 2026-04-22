@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/dash.dir/link.d CMakeFiles/dash.dir/src/main.cpp.o CMakeFiles/dash.dir/src/fzf.cpp.o -o dash  /usr/lib/libSM.so /usr/lib/libICE.so /usr/lib/libX11.so /usr/lib/libXext.so

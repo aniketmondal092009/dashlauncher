@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/issacnewtown/dev/dashlauncher/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

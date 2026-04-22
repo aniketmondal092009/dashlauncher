@@ -1,0 +1,3 @@
+/home/issacnewtown/dev/dashlauncher/build/CMakeFiles/dash.dir
+/home/issacnewtown/dev/dashlauncher/build/CMakeFiles/edit_cache.dir
+/home/issacnewtown/dev/dashlauncher/build/CMakeFiles/rebuild_cache.dir

@@ -4,17 +4,18 @@ This file provides context and guidelines for developing the `dashlauncher` proj
 
 ## Project Overview
 
-**dashlauncher** (binary name: `dash`) is a lightweight X11-based application launcher, inspired by `dmenu` and `tofi`. It prioritizes the "suckless" philosophy of simplicity and speed, while being implemented in C++ for better modularity.
+**dashlauncher** (binary name: `dash`) is a lightweight X11-based application launcher, inspired by `dmenu` and `tofi`. It prioritizes a modular and modern C++ approach for maintainability and scalability.
 
 - **Main Technologies:** C++, X11 (Xlib).
-- **Architecture:** Modular design with a clear separation between declarations (`include/`) and implementations (`src/`).
+- **Architecture:** Modular structure with separate header and implementation files. The main UI component is the `MenuWindow` class.
 
 ### Directory Structure
 - `include/`: Header files (`.hpp`).
-- `src/`: Source files (`.cpp`).
+- `src/`: Implementation files (`.cpp`).
+- `main.cpp`: The application entry point.
 - `Makefile`: Build configuration.
 - `README.md`: Project vision and user-facing documentation.
-- `compile_flags.txt`: Used for LSP (like `clangd`) support to find header files.
+- `compile_flags.txt`: Used for LSP (like `clangd`) support.
 
 ---
 
@@ -26,7 +27,7 @@ The project uses a standard `Makefile` for compilation and installation.
 - **Build:** `make`
   - Compiles the source files and links the X11 library to produce the `dash` binary.
 - **Clean:** `make clean`
-  - Removes object files (`.o`) and the compiled binary.
+  - Removes the compiled binary and temporary files.
 - **Install:** `sudo make install`
   - Installs the `dash` binary to `/usr/local/bin/`.
 
@@ -39,13 +40,14 @@ The project uses a standard `Makefile` for compilation and installation.
 - **Override Redirect:** The window bypasses the window manager (`override_redirect = True`), which is standard for launcher applications to ensure it is always on top.
 
 ### Coding Style
-- **Namespacing:** All core logic should reside within the `launcher` namespace to avoid naming collisions.
+- **Modular Architecture:** Organize code into logical components using classes and namespaces where appropriate to ensure clean separation of concerns.
 - **Header Guards:** Use `#ifndef SYMBOL_HPP` guards in all header files.
-- **Modularity:** Encapsulate distinct functionalities (e.g., window management, argument parsing) into separate classes or modules.
+- **Modularity:** Encapsulate distinct functionalities into clear classes (e.g., `MenuWindow`) or dedicated source files.
 
 ### Future Implementation Notes
-- **Application Searching:** New logic for scanning `$PATH` or `.desktop` files should be added as a separate module in `src/search.cpp` and `include/search.hpp`.
-- **UI Rendering:** Future font support (e.g., Xft) and layout logic should be integrated into the `XWindow` class or a dedicated `Renderer` class.
+- **Application Searching:** New logic for scanning `$PATH` or `.desktop` files should be implemented in `main.cpp` (or a dedicated `src/` file if `main.cpp` exceeds ~500 lines).
+- **UI Rendering:** Future font support (e.g., Xft) and advanced layout logic should be integrated into the `MenuWindow` class.
 
 ### Dependencies
 - **X11:** Ensure `libx11-dev` (or equivalent) is installed on the development system.
+
